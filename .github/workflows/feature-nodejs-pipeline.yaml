@@ -33,7 +33,7 @@ jobs:
         echo ${{ inputs.project }}
         echo ${{ inputs.component }}
         echo ${{ inputs.environment }} 
-        echo 'APP_VERSION is : ${{ $APP_VERSION }}''
+        echo "version: ${APP_VERSION}"
 
     - name: Install NPM
       run: npm install
