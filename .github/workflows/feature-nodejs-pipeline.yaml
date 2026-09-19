@@ -14,7 +14,7 @@ on:
         required: true
         type: string    
 
-environment:
+env:
   ACC_ID: 764038423244
 
 
