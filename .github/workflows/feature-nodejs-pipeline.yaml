@@ -22,3 +22,12 @@ jobs:
       uses: actions/checkout@v6
     - name: list files
       run: ls -lrth
+    - name: print inputs
+      run: |
+        echo ${{ inputs.project }}
+        echo ${{ inputs.component }}
+        echo ${{ inputs.environment }} 
+    - name: Install NPM
+      run: npm install
+    - name: Test NPM
+      run: npm test
