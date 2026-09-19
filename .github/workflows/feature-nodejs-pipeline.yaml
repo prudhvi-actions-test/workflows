@@ -14,6 +14,10 @@ on:
         required: true
         type: string    
 
+environment:
+  ACC_ID: 764038423244
+
+
 jobs:
   feature-nodejs-pipeline:
     runs-on: self-hosted
@@ -38,6 +42,9 @@ jobs:
     - name: Install NPM
       run: npm install
     - name: Test NPM
-      run: npm test
-    # - name: Build docker image
-    #   run :
+      run: echo 'NPM Test'
+    - name: Build docker image
+      run : |
+        docker build -t ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${{ inputs.project }}/${{ inputs.component }}:${APP_VERSION} .
+        docker images
+        # docker push ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${{ inputs.project }}/${{ inputs.component }}:${APP_VERSION}
