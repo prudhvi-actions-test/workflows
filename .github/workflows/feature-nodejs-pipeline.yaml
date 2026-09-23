@@ -69,7 +69,7 @@ jobs:
         docker images
         # docker push ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${{ inputs.project }}/${{ inputs.component }}:${APP_VERSION}
 
-    - name: Update unit test status
+    - name: Docker build status
       if: always()
       # uses: prudhvi-actions-test/workflows/.github/actions/update-commit-status/action.yaml@main
       uses: prudhvi-actions-test/workflows/.github/actions/update-commit-status@main
