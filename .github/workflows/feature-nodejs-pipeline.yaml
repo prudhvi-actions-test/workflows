@@ -47,7 +47,8 @@ jobs:
 
     - name: Update unit test status
       if: always()
-      uses: prudhvi-actions-test/workflows/.github/actions/update-commit-status/action.yaml@main
+      # uses: prudhvi-actions-test/workflows/.github/actions/update-commit-status/action.yaml@main
+      uses: prudhvi-actions-test/workflows/.github/actions/update-commit-status@main
       with:
         sha: ${{ github.sha }}
         state: ${{ steps.unit_tests.outcome }}     # success / failure / cancelled
